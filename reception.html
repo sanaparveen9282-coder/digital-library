@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reception</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f0f9ff;
+      text-align: center;
+      padding: 20px;
+      animation: slideIn 1s;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    h1 {
+      background: #34495e;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .bot {
+      background: white;
+      width: 80%;
+      margin: auto;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    input {
+      width: 80%;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 25px;
+      border: none;
+      border-radius: 20px;
+      background: #27ae60;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1e8449;
+    }
+  </style>
+
+  <script>
+    function askBot() {
+      let q = document.getElementById("query").value;
+      let reply = document.getElementById("reply");
+
+      if (q === "") {
+        reply.innerHTML = "🤖 Please enter your question.";
+      } else {
+        reply.innerHTML =
+          "🤖 Thank you! Your query has been recorded.<br>" +
+          "<i>(This is a demo reception bot)</i>";
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+<h1>🏢 Reception Desk</h1>
+<p><b>Receptionist:</b> Yashica Chauhan</p>
+
+<div class="bot">
+  <h3>🤖 Help & Query Bot</h3>
+  <input id="query" type="text" placeholder="Type your query here">
+  <br>
+  <button onclick="askBot()">Send</button>
+  <p id="reply"></p>
+</div>
+
+<br><br>
+<a href="index.html">⬅ Back to Home</a>
+
+</body>
+</html>

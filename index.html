@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Digital Delhi Public Library</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: linear-gradient(to right, #e0ecff, #ffffff);
+      text-align: center;
+      animation: fadeIn 1.2s;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    header {
+      background: linear-gradient(to right, #1f4037, #99f2c8);
+      color: white;
+      padding: 30px;
+    }
+
+    .buttons button {
+      padding: 16px 35px;
+      margin: 15px;
+      font-size: 17px;
+      border: none;
+      border-radius: 30px;
+      background: #2e86de;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .buttons button:hover {
+      background: #1b4f72;
+      transform: scale(1.1);
+    }
+
+    .counter {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    footer {
+      background: #1f4037;
+      color: white;
+      padding: 10px;
+      margin-top: 30px;
+    }
+  </style>
+
+  <script>
+    let count = localStorage.getItem("visitors");
+    if (!count) {
+      count = 1;
+    } else {
+      count = parseInt(count) + 1;
+    }
+    localStorage.setItem("visitors", count);
+  </script>
+</head>
+
+<body>
+
+<header>
+  <h1>📚 Digital Delhi Public Library</h1>
+  <p>Hybrid Smart Library Model</p>
+</header>
+
+<h2>Main Sections</h2>
+
+<div class="buttons">
+  <a href="novels.html"><button>📖 Novels & Autobiographies</button></a>
+  <a href="reception.html"><button>🏢 Reception</button></a>
+  <a href="career.html"><button>🎓 Career</button></a>
+  <a href="newspapers.html"><button>📰 Newspapers</button></a>
+</div>
+
+<div class="counter">
+  👥 Total Visitors: <b><script>document.write(count);</script></b>
+</div>
+
+<footer>
+  School Project | Digital Library Model
+</footer>
+
+</body>
+</html>
